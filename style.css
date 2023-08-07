@@ -60,8 +60,16 @@
     transform: scale(1.1);
 }
 
-.img__content:hover i{
+.img__content:hover .theme_play_icon{
     cursor: pointer;
+    display: block;
+}
+
+.main.playing .img__content:hover .theme_play_icon{
+    display: none;
+}
+
+.main.playing .img__content:hover .theme_pause_icon{
     display: block;
 }
 

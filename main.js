@@ -15,6 +15,7 @@ const range = document.querySelector('.range')
 const rangeBar = document.querySelector('.range__bar')
 const currentTime = document.querySelector('.current__time')
 const endTime = document.querySelector('.end__time')
+const themeImg = document.querySelector('.img__content')
 
 let currentSong
 let currentProgress
@@ -67,6 +68,19 @@ function controlPlayIcon(){
     }
 }
 
+function eventClickPlayIcon(){
+    if(isPlayed){
+        isPlayed = false
+        audio.pause()
+        controlPlayIcon()
+    }
+    else{
+        isPlayed = true
+        audio.play()
+        controlPlayIcon()
+    }
+}
+
 //Next Song
 function nextSong(){
     let tmp = currentSong
@@ -116,32 +130,11 @@ function updateTime(){
 }
 
 //Click Play Icon
-controlBtn.addEventListener('click', function(){
-    if(isPlayed){
-        isPlayed = false
-        audio.pause()
-        controlPlayIcon()
-    }
-    else{
-        isPlayed = true
-        audio.play()
-        controlPlayIcon()
-    }
-})
+controlBtn.addEventListener('click', eventClickPlayIcon)
 
-footerPlay.addEventListener('click', function(){
-    if(isPlayed){
-        isPlayed = false
-        audio.pause()
-        controlPlayIcon()
-    }
-    else{
-        isPlayed = true
-        audio.play()
-        controlPlayIcon()
-    }
-})
+footerPlay.addEventListener('click', eventClickPlayIcon)
 
+themeImg.addEventListener('click', eventClickPlayIcon)
 //Chọn bài
 playlist.addEventListener('click', function(e){
     let songNode = e.target.closest('.list__item')
