@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <!-- LEFT PAGE  -->
+            <div class="left__page">
+                <div class="content">
+                    <div class="img__content">
+                        <img src="./img/theme.jpg" alt="">
+                        <i class='bx bx-play-circle' ></i>
+                    </div>
+                    <div class="text__content">
+                        <h4>Lofi Một Chút Thôi</h4>
+                        <p>Cập nhật: 31/07/2023</p>
+                    </div>
+                    <div class="btn__play">
+                        <button class="control__btn">
+                            <i class='bx bx-play play_icon'></i>
+                            <i class="fa-regular fa-circle-pause pause_icon"></i>
+                            <p>Tiếp Tục Phát</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PAGE  -->
+            <div class="right__page">
+                <div class="list__header">
+                    <div class="list__title">Danh Sách Phát</div>
+                </div>
+                <div class="list__music">
+                </div>
+            </div>
+        </div>
+
+        <!-- AUDIO -->
+        <div class="footer">
+            <!-- LEFT FOOTER  -->
+            <div class="left__footer">
+                <div class="current__music__img">
+                    <img src="./img/11h-11p.jpg" alt="">
+                </div>
+                <div class="current__music__text">
+                    <h4>Em Thích</h4>
+                    <p>SEAN x @LuaOfficialMusic</p>
+                </div>
+            </div>
+            <!-- RIGHT FOOTER  -->
+            <div class="right__footer">
+                <div class="function__app">
+                    <i class="fa-solid fa-shuffle random__icon"></i>
+                    <i class="fa-solid fa-backward-step back__icon"></i>
+                    <div class="footer__play">
+                        <i class="fa-regular fa-circle-pause pause_icon"></i>
+                        <i class="fa-regular fa-circle-play play_icon"></i>
+                    </div>
+                    <i class="fa-solid fa-forward-step next__icon"></i>
+                    <i class="fa-solid fa-repeat repeat__icon"></i>
+                </div>
+                <div class="time__progress">
+                    <div class="current__time">00:00</div>
+                    <div class="range">
+                        <div class="range__bar"></div>
+                    </div>
+                    <div class="end__time">03:00</div>
+                </div>
+                <audio src="./audio/IuLaDaySpeedUp-SeanVietNamMuoiiAnfang-9217183.mp3"  class="audio"></audio>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./main.js"></script>
+</html>

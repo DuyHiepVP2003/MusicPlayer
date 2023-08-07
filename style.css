@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+    transition: all 1s ease;
+    font-family: sans-serif;
+}
+
+.main{
+    position: relative;
+    background-color: #170F23;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+    padding: 50px 0;
+}
+
+/* LEFT PAGE CONTENT */
+.left__page{
+    width: 25%;
+}
+
+.content{
+    margin: 0 10px;
+}
+
+.img__content{
+    object-fit: cover;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.img__content img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.img__content i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    display: none;
+}
+
+.img__content:hover img{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.img__content:hover i{
+    cursor: pointer;
+    display: block;
+}
+
+.text__content{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.btn__play{
+    text-align: center;
+}
+
+.control__btn{
+    background-color: rgb(155, 77, 224);
+    padding: 5px 10px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.control__btn p{
+    display: inline;
+}
+
+.main .pause_icon{
+    display: none;
+}
+
+.main.playing .play_icon{
+    display: none;
+}
+
+.main.playing .pause_icon{
+    display: inline-block;
+}
+/* PAGE RIGHT  */
+
+.right__page{
+    width: 75%;
+}
+
+.list__header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid hsla(0,0%,100%,0.1);
+}
+
+.list__title{
+    width: 44%;
+    color: #8B8791;
+    font-size: 20px;
+}
+
+.list__item{
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid hsla(0,0%,100%,0.1);
+    align-items: center;
+}
+
+.list__item:hover{
+    background-color: #2F2739;
+}
+
+.list__item__img{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.list__item__img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.list__item__img i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.list__item__img:hover img{
+    transform: scale(1.1);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.list__item__img:hover i{
+    display: block;
+    cursor: pointer;
+}
+
+.list__item__content p{
+    margin-top: 2px;
+    color: #8B8791;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: #130c1c;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* LEFT FOOTER  */
+
+.left__footer{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.current__music__img{
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.current__music__img img{
+    width: 100%;
+    height: 100%;
+}
+
+.current__music__img:hover img{
+    opacity: 0.7;
+}
+
+.current__music__text{
+    margin-left: 40px;
+}
+
+.current__music__text p{
+    color: #8B8791;
+}
+
+/* RIGHT FOOTER  */
+
+.right__footer{
+    width: 50%;
+}
+
+.function__app{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.function__app i{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.time__progress{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.range{
+    cursor: pointer;
+    width: 80%;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 5px;
+    transition: unset;
+}
+
+.range__bar{
+    background: #bb69cc;
+    height: 100%;
+    width: 0;
+    transition: unset;
+}
+
+.random__icon:hover ,
+.back__icon:hover ,
+.pause_icon:hover ,
+.play_icon:hover ,
+.next__icon:hover ,
+.repeat__icon:hover{
+    color: #bb69cc;
+    transition: unset;
+}
+
+.random__icon.active,
+.repeat__icon.active{
+    color: #bb69cc;
+}
