@@ -13,6 +13,8 @@ const main = document.querySelector('.main')
 const playlist = document.querySelector('.list__music')
 const range = document.querySelector('.range')
 const rangeBar = document.querySelector('.range__bar')
+const currentTime = document.querySelector('.current__time')
+const endTime = document.querySelector('.end__time')
 
 let currentSong
 let currentProgress
@@ -101,6 +103,18 @@ function randomMode(){
     return false
 }
 
+//Chuyển đổi thời gian
+function timeConvertToText(time){
+    let minute = parseInt(time/60)
+    let second = parseInt(time%60)
+    return (minute < 10 ? '0' : '')+ minute + ':' + (second < 10 ? '0' : '') + second
+}
+
+//Cập nhật thời gian hiện tại
+function updateTime(){
+    currentTime.innerText = timeConvertToText(audio.currentTime)
+}
+
 //Click Play Icon
 controlBtn.addEventListener('click', function(){
     if(isPlayed){
@@ -159,6 +173,7 @@ repeatBtn.addEventListener('click', function(){
 audio.addEventListener('timeupdate', function(){
     currentProgress = parseInt(audio.currentTime/audio.duration*100)
     rangeBar.style.width =  currentProgress + '%'
+    updateTime()
     if(currentProgress >= 100 && !repeatMode() && !randomMode()){
         setTimeout(nextSong, 2000)
     }
@@ -181,6 +196,9 @@ audio.addEventListener('timeupdate', function(){
     }
 })
 
+audio.addEventListener('loadedmetadata', function(){
+    endTime.innerText = timeConvertToText(audio.duration)
+})
 //Tua
 range.addEventListener('mousemove', function(e){
     let seekProgress = parseInt((e.pageX - this.offsetLeft)/this.offsetWidth*100)
@@ -189,12 +207,8 @@ range.addEventListener('mousemove', function(e){
         rangeBar.style.width =  currentProgress + '%'
         audio.currentTime = currentProgress/100*audio.duration
         audio.play()
+        updateTime()
         isPlayed = true
         controlPlayIcon()
     })
 })
-
-/*
-getCurrentTime = video.currentTime Lấy thời gian audio hiện tại
-video.duration = video.duration Lấy độ dài audio
-*/
