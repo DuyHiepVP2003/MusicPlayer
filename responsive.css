@@ -1,0 +1,43 @@
+/* PC  */
+@media screen and (min-width: 1024px){
+    
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    *{
+        font-size: 14px;
+    }
+    .left__footer{
+        width: 44%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px){
+    *{
+        font-size: 12px;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0 0 60px 0;
+    }
+    .left__page,.right__page{
+        width: 88%;
+    }
+    .current__music__img{
+        width: 40px;
+        height: 40px;
+    }
+    .left__footer{
+        width: 100%;
+    }
+    .right__footer{
+        width: 100%;
+    }
+    .function__app i{
+        font-size: 20px;
+    }
+}

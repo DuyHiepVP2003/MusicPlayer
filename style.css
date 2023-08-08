@@ -9,6 +9,7 @@
 }
 
 .main{
+    min-height: 100vh;
     position: relative;
     background-color: #170F23;
     padding: 40px 0;
